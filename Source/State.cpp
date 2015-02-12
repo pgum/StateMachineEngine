@@ -8,7 +8,7 @@ State& State::operator=(State rhs){
   swap(*this, rhs);
   return *this;
 }
-bool State::setName(Text newName){
+void State::setName(Text newName){
   name = newName;
 }
 bool State::operator==(const State &rhs) const

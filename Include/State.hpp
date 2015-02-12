@@ -12,7 +12,7 @@ struct State{
   bool operator==(const State &rhs) const;
   bool operator!=(const State &rhs) const;
   Text getName() const;
-  bool setName(Text newName);
+  void setName(Text newName);
   virtual bool handleMessage(const Message &message);
   private:
   friend void swap(State &me, State &other){

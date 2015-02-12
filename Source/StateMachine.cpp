@@ -53,6 +53,7 @@ bool StateMachine::recieve(const Message &m){
     std::cout << "SM["<< getName() << "]";
     return states.begin()->handleMessage(m);
   }
+  return false;
 }
 
 StateMachine::StateMachine(const Text &_name): running(false), name(_name){}
