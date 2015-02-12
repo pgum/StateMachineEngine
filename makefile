@@ -15,7 +15,7 @@ $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 clean: 
-	-@rm -f $(OBJDIR)/*.o $(TSTEXE); rmdir $(OBJDIR)
+	-@rm -f $(OBJDIR)/*.o ; rmdir $(OBJDIR)
 
 $(OBJDIR)/catch.runner.o: $(TSTDIR)$(TSTFWK)/catch.runner.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
