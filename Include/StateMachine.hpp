@@ -23,7 +23,7 @@ class StateMachine{
   bool isRunning() const;
   bool isEmpty() const;
   bool recieve(const Message &m);
-
+  bool isStateMachineCapableToRecieveMessage();
   private:
   int _size;
   bool running;
