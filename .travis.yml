@@ -3,10 +3,11 @@ compiler:
  - clang
  - gcc
 before_install:
+ - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+ - sudo apt-get update
  - sudo apt-get -qq install g++-4.9
  - echo g++-4.9 $(g++-4.9 --version)
 install:
  - make
-
 script:
  - run.test
