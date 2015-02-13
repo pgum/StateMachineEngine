@@ -12,6 +12,5 @@ class Message
 
   private:
   Payload payload;
-
 };
 
