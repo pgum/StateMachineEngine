@@ -1,6 +1,12 @@
 #include "StateMachine.hpp"
 #include <iostream>
 
+StateMachine::StateMachine(const Text &_name): running(false), name(_name){}
+
+StateMachine::StateMachine(): StateMachine(""){}
+
+StateMachine::~StateMachine(){}
+
 std::size_t StateMachine::size() const{
   return states.size();
 }
@@ -46,19 +52,16 @@ bool StateMachine::isEmpty() const{
   return states.size() == 0;
 }
 
+bool StateMachine::isStateMachineCapableToRecieveMessage()
+{
+  return not (isEmpty() or size() > 1)
+}
+
 bool StateMachine::recieve(const Message &m){
-  if(isEmpty() or size() > 1)
-    return false;
-  if(size() == 1){
+  if(isStateMachineCapableToRecieveMessage()){
     std::cout << "SM["<< getName() << "]";
     return states.begin()->handleMessage(m);
   }
   return false;
 }
-
-StateMachine::StateMachine(const Text &_name): running(false), name(_name){}
-
-StateMachine::StateMachine(): StateMachine(""){}
-
-StateMachine::~StateMachine(){}
 

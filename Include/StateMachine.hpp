@@ -8,10 +8,6 @@ using StatesContainer = std::vector<State>;
 using Text = std::string;
 
 class StateMachine{
-  int _size;
-  bool running;
-  StatesContainer states;
-  Text name;
   public:
   StateMachine(const Text &_name);
   StateMachine();
@@ -27,5 +23,12 @@ class StateMachine{
   bool isRunning() const;
   bool isEmpty() const;
   bool recieve(const Message &m);
+  bool isStateMachineCapableToRecieveMessage();
+  private:
+  int _size;
+  bool running;
+  StatesContainer states;
+  Text name;
+
 };
 
