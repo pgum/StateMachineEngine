@@ -54,7 +54,7 @@ bool StateMachine::isEmpty() const{
 
 bool StateMachine::isStateMachineCapableToRecieveMessage()
 {
-  return not (isEmpty() or size() > 1)
+  return not (isEmpty() or size() > 1);
 }
 
 bool StateMachine::recieve(const Message &m){
