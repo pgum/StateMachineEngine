@@ -5,6 +5,7 @@ using Text = std::string;
 struct State{
   private:
   Text name;
+  
   public:
   State();
   ~State(){}
@@ -14,6 +15,7 @@ struct State{
   Text getName() const;
   void setName(Text newName);
   virtual bool handleMessage(const Message &message);
+  
   private:
   friend void swap(State &me, State &other){
     using namespace std;
