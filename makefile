@@ -11,9 +11,6 @@ TSTEXE=run.test
 
 all: $(OBJDIR) $(TSTEXE)
 
-test: $(TSTEXE)
-	./$(TSTEXE)
-
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
